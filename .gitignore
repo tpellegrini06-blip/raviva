@@ -1,0 +1,17 @@
+# Données scolaires : ne doivent jamais être versionnées
+ecoledirecte/sortie/
+ecoledirecte/etat/
+*.ics
+donnees.json
+brief.md
+
+# Secrets
+.env
+*.env
+!.env.exemple
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

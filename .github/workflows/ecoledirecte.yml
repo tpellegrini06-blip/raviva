@@ -1,0 +1,110 @@
+name: École Directe — collecte
+
+# Trois passages par jour : le matin pour le brief complet, puis deux contrôles
+# qui ne produisent quelque chose que si l'emploi du temps ou les devoirs ont bougé.
+on:
+  schedule:
+    - cron: "0 5 * * 1-6"    # 07h00 Paris (heure d'été) — brief complet
+    - cron: "0 11 * * 1-5"   # 13h00 Paris — changements de la matinée
+    - cron: "30 16 * * 1-5"  # 18h30 Paris — devoirs saisis après les cours
+  workflow_dispatch:
+    inputs:
+      complet:
+        description: "Forcer un brief complet plutôt que les seuls changements"
+        type: boolean
+        default: true
+
+concurrency:
+  group: ecoledirecte
+  cancel-in-progress: false
+
+jobs:
+  collecte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # Garde-fou : ce dépôt manipule des données scolaires d'enfants mineurs.
+      # Sur un dépôt public, les artefacts de job sont téléchargeables par n'importe qui.
+      - name: Refuser l'exécution sur un dépôt public
+        if: ${{ github.event.repository.private == false }}
+        run: |
+          echo "::error::Ce dépôt est public. La collecte École Directe manipule des notes," \
+               "absences et messages concernant des mineurs et ne doit tourner que dans un dépôt privé."
+          exit 1
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ecoledirecte/requirements.txt
+
+      - name: Installer les dépendances
+        working-directory: ecoledirecte
+        run: pip install -r requirements.txt
+
+      # L'état de la veille permet de dire ce qui a changé ; sans lui, tout paraît nouveau.
+      - name: Restaurer l'état précédent
+        uses: actions/cache/restore@v4
+        with:
+          path: ecoledirecte/etat
+          key: ed-etat-${{ github.run_id }}
+          restore-keys: ed-etat-
+
+      - name: Collecter
+        id: collecte
+        working-directory: ecoledirecte
+        env:
+          ED_IDENTIFIANT: ${{ secrets.ED_IDENTIFIANT }}
+          ED_MOT_DE_PASSE: ${{ secrets.ED_MOT_DE_PASSE }}
+          ED_FA_CN: ${{ secrets.ED_FA_CN }}
+          ED_FA_CV: ${{ secrets.ED_FA_CV }}
+          ED_FUSEAU: Europe/Paris
+        run: |
+          set +e
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" != "0 5 * * 1-6" ]; then
+            python run.py --changements --moment "contrôle"
+          else
+            python run.py --moment "brief du matin"
+          fi
+          code=$?
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -eq 3 ]; then
+            echo "::error::École Directe redemande la question de sécurité." \
+                 "Relancer bootstrap_2fa.py en local et mettre à jour les secrets ED_FA_CN / ED_FA_CV."
+          elif [ "$code" -eq 4 ]; then
+            echo "::error::Identifiants refusés : vérifier ED_IDENTIFIANT / ED_MOT_DE_PASSE."
+          fi
+          exit $code
+
+      - name: Envoyer le brief par mail
+        if: success()
+        working-directory: ecoledirecte
+        env:
+          ED_SMTP_HOTE: ${{ secrets.ED_SMTP_HOTE }}
+          ED_SMTP_PORT: ${{ secrets.ED_SMTP_PORT }}
+          ED_SMTP_UTILISATEUR: ${{ secrets.ED_SMTP_UTILISATEUR }}
+          ED_SMTP_MOT_DE_PASSE: ${{ secrets.ED_SMTP_MOT_DE_PASSE }}
+          ED_MAIL_DESTINATAIRE: ${{ secrets.ED_MAIL_DESTINATAIRE }}
+        run: python envoyer_mail.py sortie/brief.md
+
+      - name: Conserver l'état pour le prochain passage
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ecoledirecte/etat
+          key: ed-etat-${{ github.run_id }}
+
+      - name: Publier le brief et le calendrier
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecoledirecte-${{ github.run_id }}
+          path: |
+            ecoledirecte/sortie/brief.md
+            ecoledirecte/sortie/ecoledirecte.ics
+            ecoledirecte/sortie/donnees.json
+          retention-days: 14
