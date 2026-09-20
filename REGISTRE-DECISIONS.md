@@ -19,7 +19,8 @@ Statuts possibles : `KILL` · `PARK` · `TEST` · `BUILD` · `NON ÉVALUÉ`
 | D-001 | Nom de marque « RAVIVA » | **ABANDONNÉ** | ~sept. 2026 | — |
 | D-002 | Produit : archive de souvenirs racontés par les proches | **NON ÉVALUÉ** | — | à arbitrer |
 | D-003 | App de covoiturage scolaire | **KILL** | 20 sept. 2026 | — |
-| D-004… | *(idées non encore inventoriées)* | — | — | à collecter |
+| D-004 | Tuteur IA vocal pour les devoirs, relié à l'imprimante | **TEST** | 20 sept. 2026 | après 5 soirs |
+| D-005… | *(idées non encore inventoriées)* | — | — | à collecter |
 
 ---
 
@@ -91,7 +92,32 @@ mineurs non accompagnés, ou un basculement vers une vente aux départements
 
 ---
 
-## D-004 et suivants — inventaire à compléter
+## D-004 — Tuteur IA vocal pour les devoirs, relié à l'imprimante → TEST
+
+**Trace au dossier :** `ANALYSE-TUTEUR-IA-DEVOIRS.md`, 20 septembre 2026.
+Score **63/100** — premier dossier à franchir le seuil de 60.
+
+**Pourquoi il passe là où les autres ont échoué :** marché payeur établi
+(soutien scolaire, crédit d'impôt 50 %), produit mono-utilisateur sans effet de
+seuil, durée de vie client jusqu'à 11 ans, et testable en une soirée sans rien
+construire.
+
+**Différenciation réduite à un seul élément :** la boucle papier. Kaïdo occupe
+déjà la position « rituel vocal sans écran » (CP-CM2, photo du cours, sans
+écran, boîte + abonnement). La sortie imprimante est ce qui reste, et doit
+devenir le cœur du produit.
+
+**Inconnue mesurée par le test :** la rétention de l'enfant, pas le marché.
+
+**Décision au bout de 5 soirs :** 3 seuils atteints → BUILD. Un seul manqué →
+PARK.
+
+**Interdit pendant le test :** instruire le nom. Un nom a été prononcé à la
+naissance de l'idée — c'est le mécanisme exact qui a consommé D-001/D-002.
+
+---
+
+## D-005 et suivants — inventaire à compléter
 
 Plusieurs idées ont été formulées entre août et septembre 2026 sans laisser de
 trace écrite. Elles n'ont donc **aucun statut**, ce qui les rend impossibles à
@@ -106,8 +132,8 @@ arbitrer et impossibles à abandonner proprement.
 | Mesure | Valeur |
 |---|---|
 | Durée observée | ~6 semaines |
-| Idées formulées | ≥ 3 (nombre réel inconnu, faute de trace) |
-| Idées arbitrées | 1 (covoiturage) |
+| Idées formulées | ≥ 4 (nombre réel inconnu, faute de trace) |
+| Idées arbitrées | 2 (covoiturage KILL, tuteur IA TEST) |
 | Noms de marque instruits | 1 |
 | Produits instruits | **0** |
 | Produits lancés | **0** |
