@@ -252,3 +252,136 @@ parents répondent « oui » par politesse sur les questions de principe et
 - Scoléo, covoiturage scolaire : https://www.scoleo.fr/Covoiturage-Scolaire.html
 - Cmabulle : https://cmabulle.fr/
 - Hopways, accompagnateurs professionnels : https://www.hopways.com/
+
+---
+
+# ADDENDUM — révision du 20 septembre 2026 (pivot collège)
+
+**Nouvelle information :** la cible n'est pas le primaire mais **le collège**.
+Les collégiens sortent seuls, le modèle visé est explicitement « un BlaBlaCar
+avec l'enfant dedans » : partage de frais, notation, suivi GPS temps réel.
+
+**Verdict révisé : KILL** (précédemment PARK).
+
+## Ce que le pivot collège corrige réellement
+
+Le passage au collège **règle deux objections majeures** de l'analyse initiale,
+et il faut le reconnaître :
+
+1. **Le problème de remise de l'enfant disparaît.** Plus de fiche de liaison,
+   plus de liste de personnes autorisées, plus de négociation avec la vie
+   scolaire. Le collégien sort seul et monte seul. C'était un des deux points
+   durs non juridiques : il est levé.
+2. **Le partage de frais remplace la rémunération.** En restant sur du pur
+   partage de frais, on reste dans le périmètre du L3132-1 : le trajet demeure
+   non onéreux, l'assurance RC auto continue de jouer, et le conducteur ne
+   bascule pas en transporteur. Le point dur juridique n°1 est levé lui aussi.
+
+Le design s'est donc amélioré. Ce n'est pas le design qui tue le projet.
+
+## Ce qui le tue : les deux fenêtres ne se recouvrent pas
+
+C'est le point décisif, et il est arithmétique.
+
+**Fenêtre autorisée.** Les conditions de BlaBlaCar — la référence explicitement
+revendiquée — interdisent **strictement** la réservation d'une place pour un
+mineur voyageant seul **de moins de 13 ans**. Au-delà de 13 ans, il faut
+l'accord préalable du conducteur et une autorisation signée des représentants
+légaux. Ce n'est pas une prudence commerciale isolée : c'est la pratique du
+secteur sur le transport de mineurs non accompagnés.
+
+**Fenêtre utile.** Elle a été identifiée par l'auteur du projet lui-même :
+
+- **6e (11 ans) et 5e (12 ans)** → besoin réel, l'enfant est jeune, les parents
+  ne veulent pas le laisser rentrer seul.
+- **4e (13 ans) et 3e (14 ans)** → l'enfant rentre seul. Le besoin s'éteint.
+
+Superposition des deux :
+
+| Niveau | Âge | Besoin réel | Autorisé (modèle BlaBlaCar) |
+|---|---|---|---|
+| Maternelle / primaire | 3–10 | Fort | **Non** — remise de l'enfant + mineur trop jeune |
+| 6e | 11 | **Fort** | **Non** — moins de 13 ans |
+| 5e | 12 | **Fort** | **Non** — moins de 13 ans |
+| 4e | 13 | Faible | Oui, sous autorisation |
+| 3e | 14 | **Nul** | Oui, sous autorisation |
+
+**La fenêtre où c'est utile et la fenêtre où c'est autorisé ne se recouvrent
+pas.** Là où le besoin existe, le transport du mineur seul est fermé ; là où il
+est ouvert, l'enfant rentre déjà seul et le produit n'a plus d'objet.
+
+Ce n'est pas un problème de produit, de design ou d'exécution. C'est une
+contrainte de structure qu'aucune fonctionnalité ne déplace.
+
+## Le repli « maternelle / primaire » est fermé aussi
+
+L'hypothèse de repli envisagée en fin de discussion — revenir aux tout petits —
+se heurte à la conjonction des deux blocages déjà documentés : remise de
+l'enfant par l'établissement (fiche de liaison) **et** impossibilité de traiter
+un enfant de moins de 10 ans comme passager non accompagné. Les deux fenêtres
+extrêmes sont donc fermées, pour des raisons différentes.
+
+## Le troisième mur : le concurrent coûte zéro euro
+
+À l'âge collège, l'alternative n'est pas la garderie payante : c'est le
+**transport scolaire**, gratuit ou quasi gratuit dans de nombreuses régions. En
+Hauts-de-France, il est **totalement gratuit** de la maternelle au lycée, et
+transporte environ **180 000 élèves par jour**.
+
+L'expression employée pour décrire le besoin est d'ailleurs révélatrice :
+« tu ne veux pas qu'il rentre en bus ». Ce n'est pas l'énoncé d'une
+impossibilité, c'est l'énoncé d'une **préférence**. Or on ne construit pas un
+abonnement payant sur une préférence quand l'option par défaut est gratuite,
+déjà organisée et déjà financée par la collectivité.
+
+## Score révisé
+
+| Dimension | Avant | Après | Commentaire |
+|---|---|---|---|
+| Gravité de la douleur | 7 | 5 | Le bus gratuit existe ; c'est un confort, pas un blocage |
+| Fréquence | 9 | 6 | Le dépannage est ponctuel, pas quotidien |
+| Disposition à payer | 3 | 2 | Concurrence gratuite **et** alternative publique gratuite |
+| Accès aux premiers utilisateurs | 4 | 4 | Inchangé |
+| Avantage déloyal | 2 | 2 | Inchangé |
+| Différenciation | 3 | 3 | Inchangé |
+| Simplicité du MVP | 4 | 5 | Le pivot simplifie : plus de remise d'enfant à gérer |
+| Délai jusqu'à la preuve | 6 | 6 | Inchangé |
+| Revenu récurrent | 4 | **1** | Cycle de vie client ≈ 2 ans, et la fenêtre autorisée l'annule |
+| Maintenance *(inversé)* | 3 | 3 | Inchangé |
+| **TOTAL** | **45** | **37/100** | |
+
+Le pivot a amélioré le produit et dégradé le business. C'est le signe
+caractéristique d'une idée qu'on affine au lieu de la valider.
+
+## Verdict
+
+# KILL
+
+Dossier clos. Le test terrain des 12 parents prévu dans l'analyse initiale
+**n'a plus lieu d'être** : la contrainte n'est plus une incertitude de demande
+que l'enquête pourrait lever, c'est une incompatibilité structurelle entre la
+tranche d'âge où le besoin existe et celle où le transport est praticable.
+Interroger des parents ne déplacera pas cette frontière.
+
+## Observation de méthode
+
+Trois itérations de la même idée en une seule conversation, chacune corrigeant
+l'objection précédente : primaire → collège → repli maternelle. C'est la
+signature typique de la dérive d'idéation — l'idée est réparée au lieu d'être
+mise à l'épreuve. Le mérite revient ici à l'auteur du projet, qui a identifié
+lui-même la faille fatale (« vers la 4e-3e ils rentrent tout seuls ») avant
+toute analyse externe. Ce réflexe est le bon ; il a simplement été appliqué une
+itération trop tard.
+
+**Priorité réaffirmée : RAVIVA, dont le lancement n'est pas bouclé.**
+
+## Sources complémentaires
+
+- BlaBlaCar — conditions d'âge et mineurs non accompagnés :
+  https://support.blablacar.com/hc/fr/articles/360014547380-Conditions-d-a-ge
+- BlaBlaCar — un mineur peut-il utiliser le site :
+  https://m.blablacar.fr/faq/question/restriction-concernant-les-mineurs
+- Gratuité du transport scolaire en Hauts-de-France :
+  https://www.hautsdefrance.fr/transports-scolaires-la-region-maintient-la-gratuite-partout-en-hauts-de-france/
+- Autorisation parentale et transport de mineurs en covoiturage :
+  https://www.urcidff-lr.fr/assurance-covoiturage-prise-en-charge-des-passagers-mineurs/
