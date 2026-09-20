@@ -254,3 +254,163 @@ fonctionnalité manquante du produit.
 - SchoolUp, tuteur IA socratique : https://www.schoolup.fr/
 - Crédit d'impôt services à la personne 50 %, guide 2026 : https://serviceathome.fr/blog/credit-impot-service-domicile-2026
 - AI Act, report de l'échéance haut risque au 2 décembre 2027 : https://www.wenvision.com/fr/articles/ai-act-report-echeance-aout-2026-systemes-ia-haut-risque/
+
+---
+
+# ADDENDUM — précisions du 20 septembre 2026
+
+## Deux corrections
+
+**1. Il n'y a pas de nom.** « Naïd » était une faute de frappe de dictée
+vocale, pas une marque. La mise en garde de la section 10 visait un fantôme.
+La règle reste valable pour le jour où un nom apparaîtra vraiment — elle
+n'avait simplement pas lieu de s'appliquer ici.
+
+**2. « Obligatoire » avait été mal compris.** Il ne s'agit pas d'imposer une
+séance à un enfant récalcitrant, mais de **construire une habitude de travail**
+jusqu'à ce que l'enfant sache s'y mettre seul. La thèse produit n'est pas
+« un tuteur permanent » mais **« un produit qui apprend à travailler »**.
+
+C'est une meilleure thèse. Elle a une conséquence à regarder en face :
+
+> **Paradoxe de l'autonomie — si le produit réussit, l'enfant n'en a plus
+> besoin.** Un produit dont la promesse est de se rendre superflu a une
+> tension native entre sa promesse et son abonnement.
+
+Ce n'est pas rédhibitoire : le programme se durcit chaque année, et
+l'autonomie acquise en CM1 ne couvre pas la 4e. Mais l'argumentaire de vente
+doit être **« il progresse d'un niveau à l'autre »**, jamais « il finira par
+ne plus en avoir besoin ». À trancher au moment du positionnement, pas avant.
+
+---
+
+## Correction de fond — l'adaptation au « style d'apprentissage » repose sur un mythe
+
+L'idée d'adapter le tuteur à la modalité préférée de l'enfant — « il a une
+mémoire visuelle », « lui c'est plutôt auditif » — est une des croyances les
+plus répandues en éducation. Elle est aussi une des plus solidement réfutées.
+
+**Ce que dit la recherche :** quatre méta-analyses consacrées spécifiquement à
+l'appariement entre style supposé et méthode d'enseignement trouvent une taille
+d'effet moyenne de **d = 0,04** — c'est-à-dire rien. Quinze ans de travaux
+convergent : adapter l'enseignement au « style » d'un élève ne change ni ses
+résultats ni ses apprentissages. La distinction entre canaux « visuel »,
+« auditif » et « kinesthésique » est classée parmi les neuromythes.
+
+Un test de 2015 (Rogowsky, Calhoun, Tallal) a vérifié directement si les
+« visuels » apprennent mieux par le livre et les « auditifs » par
+l'audiolivre : résultat négatif, et les « visuels » ont mieux réussi dans les
+**deux** modalités — le contraire de l'hypothèse d'appariement.
+
+**Pourquoi ça compte concrètement, au-delà de la justesse :**
+
+1. C'est une fonctionnalité coûteuse à construire et qui ne produira aucun
+   résultat mesurable. Elle échouera silencieusement.
+2. C'est une promesse commerciale qui expose à la contradiction publique par
+   le premier enseignant ou chercheur qui la lit — or ce sont précisément les
+   personnes dont la caution est nécessaire.
+
+### Ce qu'il faut mettre à la place — et qui marche vraiment
+
+Dunlosky et ses collègues (2013) ont passé en revue plus de **300 expériences**
+sur les techniques d'apprentissage. Deux seulement obtiennent la mention
+« haute utilité », c'est-à-dire un effet fiable **quels que soient l'élève, la
+matière et l'âge** :
+
+| Technique | Principe |
+|---|---|
+| **Récupération en mémoire** *(retrieval practice)* | Se forcer à restituer sans regarder, plutôt que relire |
+| **Répétition espacée** *(spacing)* | Répartir les reprises dans le temps plutôt que tout réviser d'un coup |
+
+À l'inverse, relire passivement et réviser en bloc la veille sont
+explicitement identifiés comme inefficaces pour la mémorisation durable.
+
+**Reformulation de la fonctionnalité :**
+
+> ❌ « L'IA s'adapte à la façon dont ton enfant apprend. »
+> ✅ **« L'IA retient ce qu'il a raté, et le lui represente au bon moment. »**
+
+La seconde est vraie, mesurable, défendable devant un enseignant — et
+techniquement **plus simple** que la première. C'est un meilleur produit pour
+moins de travail.
+
+Ce que le tuteur doit suivre par enfant : les notions ratées, la date du
+dernier échec, le nombre de reprises réussies. Pas un profil de modalité
+sensorielle.
+
+---
+
+## Les ajouts fonctionnels, classés par valeur
+
+Quatre éléments ont été ajoutés à l'idée. Ils ne se valent pas.
+
+### 🥇 1. L'enfant photographie son travail fini → correction
+
+**C'est le plus important, et il complète la différenciation.**
+
+La boucle devient complète et fermée :
+
+> cours photographié → programme du soir → **exercice imprimé** → l'enfant
+> écrit à la main → **photo du travail fait** → correction et explication
+
+Aucun des concurrents ne fait ce circuit. Kaïdo n'a pas d'imprimante. ChatGPT
+et Khanmigo n'ont pas de papier. Le travail manuscrit, corrigé sans écran
+pendant l'effort, est le cœur défendable du produit.
+
+C'est aussi ce qui règle l'objection « l'IA fait les devoirs à la place » :
+l'enfant **doit** produire quelque chose de sa main pour avancer.
+
+### 🥈 2. Le programme de la semaine, adapté à la vie de famille
+
+« Ce soir on fait ça parce que demain tu as sport et tu te couches tard. »
+
+Fort — mais attention : **ce n'est pas le même produit.** Cette fonction
+s'adresse au **parent** (charge mentale, organisation de la semaine), pas à
+l'enfant. C'est possiblement une meilleure proposition de valeur que le tutorat
+lui-même, car c'est le parent qui paie.
+
+À traiter comme une **hypothèse produit distincte**, pas comme une
+fonctionnalité de plus. À ne pas mélanger au test en cours.
+
+### 🥉 3. Imprimer l'exercice donné en classe, sans les réponses
+
+Élégant, et techniquement le plus coûteux : reconnaître une feuille
+photographiée, en extraire l'exercice, reconstruire une version propre sans
+corrigé. Beaucoup de cas limites (photos de travers, polycopiés mal imprimés,
+manuscrit du professeur).
+
+**Reporté en v2.** À ne pas approcher avant un TEST concluant.
+
+### ❌ 4. L'adaptation au style d'apprentissage
+
+Abandonnée, pour les raisons ci-dessus. Remplacée par le suivi des erreurs et
+la répétition espacée.
+
+---
+
+## Le test ne change pas
+
+Quatre fonctionnalités ont été ajoutées en une conversation. Aucune n'est
+mauvaise, l'une d'elles est excellente — et **aucune ne modifie la question à
+laquelle le test répond** : *est-ce que l'enfant revient ?*
+
+Une seule modification au protocole, parce qu'elle ne coûte rien et qu'elle
+teste le point n°1 :
+
+> **Ajout au protocole :** à la fin de chaque séance, l'enfant photographie sa
+> feuille et la soumet pour correction. Noter s'il le fait spontanément à
+> partir du soir 3, ou s'il faut le lui demander.
+
+Le reste du protocole, les trois seuils et les interdictions de la section 10
+sont inchangés.
+
+---
+
+## Sources complémentaires
+
+- Réfutation des styles d'apprentissage, Association for Psychological Science :
+  https://www.psychologicalscience.org/news/releases/learning-styles-debunked-there-is-no-evidence-supporting-auditory-and-visual-learning-psychologists-say.html
+- Synthèse des méta-analyses (d = 0,04) et Dunlosky 2013 :
+  https://www.structural-learning.com/post/learning-styles-myth-debunked
+- Récupération en mémoire et espacement, Réseau Canopé :
+  https://www.reseau-canope.fr/nouveaux-programmes/magazine/developpement-cognitif/comment-mieux-apprendre-pour-consolider-les-apprentissages-scolaires.html

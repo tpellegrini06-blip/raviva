@@ -20,7 +20,8 @@ Statuts possibles : `KILL` · `PARK` · `TEST` · `BUILD` · `NON ÉVALUÉ`
 | D-002 | Produit : archive de souvenirs racontés par les proches | **NON ÉVALUÉ** | — | à arbitrer |
 | D-003 | App de covoiturage scolaire | **KILL** | 20 sept. 2026 | — |
 | D-004 | Tuteur IA vocal pour les devoirs, relié à l'imprimante | **TEST** | 20 sept. 2026 | après 5 soirs |
-| D-005… | *(idées non encore inventoriées)* | — | — | à collecter |
+| D-005 | Planificateur de semaine pour le parent (charge mentale) | **NON ÉVALUÉ** | — | après D-004 |
+| D-006… | *(idées non encore inventoriées)* | — | — | à collecter |
 
 ---
 
@@ -112,12 +113,31 @@ devenir le cœur du produit.
 **Décision au bout de 5 soirs :** 3 seuils atteints → BUILD. Un seul manqué →
 PARK.
 
-**Interdit pendant le test :** instruire le nom. Un nom a été prononcé à la
-naissance de l'idée — c'est le mécanisme exact qui a consommé D-001/D-002.
+**Interdit pendant le test :** instruire un nom, coder, acheter du matériel.
+*(Rectificatif : « Naïd » était une faute de frappe, pas une marque — il n'y a
+pas encore de nom à protéger.)*
+
+**Révision du 20 sept. :** l'adaptation au « style d'apprentissage » est
+retirée du produit — quatre méta-analyses donnent d = 0,04, c'est un
+neuromythe. Remplacée par suivi des erreurs + répétition espacée, qui sont
+prouvées et plus simples à construire. La boucle papier est complétée par le
+retour photo du travail fait, qui devient le cœur défendable du produit.
 
 ---
 
-## D-005 et suivants — inventaire à compléter
+## D-005 — Planificateur de semaine pour le parent → NON ÉVALUÉ
+
+Issu de D-004 : « ce soir on fait ça parce que demain tu as sport ». La
+fonction s'adresse au **parent**, pas à l'enfant — charge mentale et
+organisation de la semaine. Comme c'est le parent qui paie, c'est peut-être
+une meilleure proposition de valeur que le tutorat lui-même.
+
+**À ne pas mélanger au test de D-004.** Hypothèse produit distincte, à
+arbitrer une fois D-004 tranché.
+
+---
+
+## D-006 et suivants — inventaire à compléter
 
 Plusieurs idées ont été formulées entre août et septembre 2026 sans laisser de
 trace écrite. Elles n'ont donc **aucun statut**, ce qui les rend impossibles à
